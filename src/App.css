@@ -1,38 +1,73 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: myFirstFont;
+  src: url("./BZiba.ttf");
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h3 {
+  font-family: myFirstFont;
+  font-size: 35px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+* {
+  margin: 0;
+  padding: 0;
+  direction: rtl;
+  text-align: right;
+}
+
+p {
+  font-size: 100%;
+}
+
+ul li {
+  font-size: 100%;
+}
+
+@media screen and (max-width: 769px) {
+  body {
+    background-color: #E5FFAF;
+  }
+  .responsiv-nav {
+    display: none;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (min-width: 769px) {
+  body {
+    background-color: #ffffff;
   }
-  to {
-    transform: rotate(360deg);
+  .responsiv-nav-bar {
+    display: none;
   }
 }
+
+.text-green {
+  color: #086972;
+}
+
+.bg-green {
+  background-color: #086972;
+}
+
+.text-big {
+  font-size: 32px;
+}
+
+.ml-big {
+  margin-left: 70%;
+  height: 100%;
+}
+
+.in-shadow {
+  -webkit-box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.bg-s-green {
+  background: #E5FFAF;
+}
+
+.text-s-green {
+  color: #17B978;
+}
+/*# sourceMappingURL=App.css.map */

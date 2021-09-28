@@ -1,0 +1,79 @@
+//our colors
+$darkgreen:#086972;
+$smothgreen:#17B978;
+$whitegreen:#E5FFAF;
+//our font
+@font-face {
+    font-family: myFirstFont;
+    src: url("./BZiba.ttf");
+}
+
+h3 {
+    font-family: myFirstFont;
+    font-size: 35px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    direction: rtl;
+    text-align: right;
+}
+
+p {
+    font-size: 100%;
+}
+
+ul li {
+    font-size: 100%;
+}
+
+//responsive
+@media screen and (max-width: 769px) {
+    body {
+        background-color: #E5FFAF;
+    }
+    .responsiv-nav {
+        display: none;
+    }
+}
+
+//responsive
+@media screen and (min-width: 769px) {
+    body {
+        background-color: #ffffff;
+    }
+    .responsiv-nav-bar {
+        display: none;
+    }
+}
+
+.text-green {
+    color: $darkgreen;
+}
+
+.bg-green {
+    background-color: $darkgreen;
+}
+
+.text-big {
+    font-size: 32px;
+}
+
+.ml-big {
+    margin-left: 70%;
+    height: 100%;
+}
+
+//inner shadow
+.in-shadow {
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.bg-s-green {
+    background: $whitegreen;
+}
+
+.text-s-green {
+    color: $smothgreen;
+}
