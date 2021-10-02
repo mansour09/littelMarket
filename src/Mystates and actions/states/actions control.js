@@ -4,17 +4,26 @@ import {
     axiosStart,
     axiosTrue,
     buyProduct,
+    userEnter,
+    loginFaild,
+    userLogout,
 } from "./action types";
 //our global state
-const myData = {
+const axiosData = {
     items: [],
     purchesitems: [],
     isloading: true,
     msg: "",
     buycounter: 0,
 };
+
+const User = {
+    userdata: [],
+    login: false,
+    massage: "",
+};
 // give action to our states and makes them dynamic
-function giveAction(state = myData, action) {
+export function giveAction(state = axiosData, action) {
     switch (action.type) {
         case axiosTrue:
             return {...state, items: action.payload, msg: "", isloading: false };
@@ -35,4 +44,15 @@ function giveAction(state = myData, action) {
     }
 }
 
-export default giveAction;
+export function userAction(state = User, action) {
+    switch (action.type) {
+        case userEnter:
+            return { userdata: action.payload, login: true, massage: "" };
+        case loginFaild:
+            return { userdata: [], login: false, massage: action.payload };
+        case userLogout:
+            return { userdata: [], login: false, massage: "" };
+        default:
+            return state;
+    }
+}

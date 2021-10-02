@@ -1,7 +1,7 @@
 import React from "react";
 import $ from "jquery";
-import { useSelector } from "react-redux";
-
+import { useSelector, useDispatch } from "react-redux";
+import { logout } from "../Mystates and actions/reducer/axios getdata";
 $(document).ready(function () {
   $(".text-s-green").click(function () {
     $(".fixed-top").animate({ width: "toggle" });
@@ -9,6 +9,8 @@ $(document).ready(function () {
 });
 function Header() {
   const counter = useSelector((state) => state.allaction.buycounter);
+  const dispatch = useDispatch();
+  const login = useSelector(state => state.useraction.login)
   return (
     <div>
       <div className="bg-white">
@@ -17,7 +19,6 @@ function Header() {
           <h3>خوش امدید</h3>
         </div>
       </div>
-
       <div className="bg-green">
         <div className="container navbar justify-content-end">
           <div className="order-4 mt-1 responsiv-nav-bar">
@@ -25,7 +26,7 @@ function Header() {
               <i className="fa fa-bars" aria-hidden="true"></i>
             </i>
           </div>
-
+          {login?<button className="btn btn-danger" onClick={()=>logout(dispatch)}>logout</button>:null}
           <div className="order-3 mt-1 ml-3 d-flex flex-row">
             <div className="order-1">
               <a href="/yourPurches" className="text-white h3">
@@ -41,24 +42,33 @@ function Header() {
             09128594069 <i className="fa fa-phone" aria-hidden="true"></i>
           </div>
           <div className="order-1 ml-auto mt-3 responsiv-nav">
-           <ul className=" d-flex flex-row ">
-          <li className="nav-link">
-            <a className="btn d-block bg-white pl-5 pr-5 text-green" href="/">
-              خانه
-            </a>
-          </li>
-          <li className="nav-link">
-            <a className="btn bg-white pl-4 pr-4 text-green" href="/products">
-              محصولات
-            </a>
-          </li>
-          <li className="nav-link">
-            <a className="btn d-block bg-white pl-4 pr-4 text-green" href="/callwithus">
-              تماس با ما
-            </a>
-          </li>
-        </ul>
-        </div>
+            <ul className=" d-flex flex-row ">
+              <li className="nav-link">
+                <a
+                  className="btn d-block bg-white pl-5 pr-5 text-green"
+                  href="/"
+                >
+                  خانه
+                </a>
+              </li>
+              <li className="nav-link">
+                <a
+                  className="btn bg-white pl-4 pr-4 text-green"
+                  href="/products"
+                >
+                  محصولات
+                </a>
+              </li>
+              <li className="nav-link">
+                <a
+                  className="btn d-block bg-white pl-4 pr-4 text-green"
+                  href="/callwithus"
+                >
+                  تماس با ما
+                </a>
+              </li>
+            </ul>
+          </div>
           <div className="order-0 ml-auto">
             <img
               className="navbar-brand rounded-circle"

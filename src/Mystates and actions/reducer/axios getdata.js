@@ -6,6 +6,9 @@ import {
     axiosStart,
     axiosTrue,
     buyProduct,
+    userEnter,
+    loginFaild,
+    userLogout
 } from "../states/action types";
 
 export async function loadData(dispatch) {
@@ -39,4 +42,19 @@ export function purches(dispatch, name, id, price) {
         type: buyProduct,
         payload: ourpurches,
     });
+}
+
+
+export async function User(dispatch,name,pass){
+    const userData=await axios.get("http://apitester.ir/api/Users/authenticate?" , { params:{userName:name,password:pass}})
+    if(userData.status===200){
+        dispatch({type:userEnter , payload:userData.data})
+    }
+    else dispatch({type:loginFaild ,payload:userData.statusText})
+
+}
+
+export function logout(dispatch) {
+    document.location.reload();
+    dispatch({type:userLogout})
 }

@@ -39,7 +39,7 @@ export default class Example extends React.Component {
           <div className="d-flex justify-content-center">
             <div class="card text-left ml-3 shadow">
               <img
-                style={{height:"200px",width:"100%"}}
+                style={{ height: "200px", width: "100%" }}
                 className="card-img-top rounded"
                 src={jungle_pic}
                 alt=""
@@ -51,7 +51,12 @@ export default class Example extends React.Component {
             </div>
 
             <div className="card text-left shadow">
-              <img style={{height:"200px",width:"100%"}} className="card-img-top rounded" src={forest_pic} alt="" />
+              <img
+                style={{ height: "200px", width: "100%" }}
+                className="card-img-top rounded"
+                src={forest_pic}
+                alt=""
+              />
               <div className="carousel-caption mb-0">
                 <h3 style={{ fontSize: "100%" }}>طبیعت گردی</h3>
                 <p style={{ fontSize: "70%" }}>
@@ -64,7 +69,7 @@ export default class Example extends React.Component {
           <div className="d-flex justify-content-center">
             <div class="card text-left ml-3 shadow">
               <img
-                style={{height:"200px",width:"100%"}}
+                style={{ height: "200px", width: "100%" }}
                 className="card-img-top rounded"
                 src={jungle_pic}
                 alt=""
@@ -76,7 +81,12 @@ export default class Example extends React.Component {
             </div>
 
             <div className="card text-left shadow">
-              <img style={{height:"200px",width:"100%"}} className="card-img-top rounded" src={forest_pic} alt="" />
+              <img
+                style={{ height: "200px", width: "100%" }}
+                className="card-img-top rounded"
+                src={forest_pic}
+                alt=""
+              />
               <div className="carousel-caption mb-0">
                 <h3 style={{ fontSize: "100%" }}>طبیعت گردی</h3>
                 <p style={{ fontSize: "70%" }}>
