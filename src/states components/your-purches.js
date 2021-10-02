@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { User } from "../Mystates and actions/reducer/axios getdata";
-import { removeBuy} from "../Mystates and actions/states/action types";
+import { removeBuy } from "../Mystates and actions/states/action types";
 function YourPurches() {
   const dispatch = useDispatch();
   const purchesitems = useSelector((state) => state.allaction.purchesitems);
@@ -56,33 +56,49 @@ function YourPurches() {
     </div>
   );
 }
+
+//if user not logged in show him login form
 export default function Login() {
   const login = useSelector((state) => state.useraction.login);
   const dispatch = useDispatch();
 
   function passForm(e) {
     e.preventDefault();
-    const user=e.target[0].value;
+    const user = e.target[0].value;
     const pass = e.target[1].value;
-    User(dispatch,user,pass);
+    User(dispatch, user, pass);
   }
 
+  let body;
+  login
+    ? (body = <YourPurches />)
+    : (body = (
+        <>
+          <form
+            onSubmit={passForm}
+            className="text-green form-group d-flex justify-content-center flex-column container"
+          >
+            <h1>ابتدا باید ورود کنید</h1>
+            <label> نام کاربردی :</label>
+            <input
+              className=" form-control"
+              type="text"
+              placeholder="ali"
+              name="user"
+            />
+            <label>رمز عبور :</label>
+            <input
+              className=" form-control"
+              type="password"
+              placeholder="1234"
+              name="pass"
+            />
+            <button type="submit" className="btn bg-s-green shadow">
+              وارد شوید
+            </button>
+          </form>
+        </>
+      ));
 
-    let body;
-    login?body=<YourPurches/>:
-    body=
-      <>
-    <form onSubmit={passForm} className="text-green form-group d-flex justify-content-center flex-column container">
-    <h1 >ابتدا باید ورود کنید</h1>
-      <label> نام کاربردی :</label>
-  <input className=" form-control" type="text" placeholder="ali" name="user"/>
-  <label>رمز عبور :</label>
-  <input className=" form-control" type="password" placeholder="1234" name="pass" />
-  <button type="submit" className="btn bg-s-green shadow" >وارد شوید</button>
-    </form>
-    
-    </>
-  
-  
   return body;
 }
